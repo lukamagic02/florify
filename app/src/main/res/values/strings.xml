@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Florify</string>
+
+    <!-- Camera Screen -->
+    <string name="open_gallery">Open gallery</string>
+    <string name="take_photo">Take photo</string>
+    <string name="switch_camera">Switch camera</string>
+    <string name="captured_image_desc">Captured flower image</string>
+
+    <!-- Popup -->
+    <string name="confirm_classification_title">Confirm Classification</string>
+    <string name="confirm_classification_message">Would you like to classify this flower?</string>
+    <string name="action_proceed">Proceed</string>
+    <string name="action_dismiss">Dismiss</string>
+
+    <!-- Classification Screen -->
+    <string name="classifying_image">Analyzing flower...</string>
+    <string name="classification_results">Classification Results</string>
+    <string name="confidence_label">Confidence</string>
+    <string name="action_back">Back</string>
+    <string name="rank_first">1st Match</string>
+    <string name="rank_second">2nd Match</string>
+    <string name="rank_third">3rd Match</string>
+
+    <!-- Errors -->
+    <string name="error_classification_failed">Failed to classify image</string>
+    <string name="error_camera_failed">Camera error occurred</string>
+    <string name="error_generic">An error occurred</string>
 </resources>

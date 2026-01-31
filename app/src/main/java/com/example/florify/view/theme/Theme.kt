@@ -16,32 +16,76 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = BrightSage,
+    onPrimary = DarkForestGreen,
+    primaryContainer = MediumForestGreen,
+    onPrimaryContainer = LightSage,
+
+    secondary = LightBeige,
+    onSecondary = DarkBeige,
+    secondaryContainer = MediumBeige,
+    onSecondaryContainer = LightEarth,
+
+    tertiary = AquaMint,
+    onTertiary = DarkAqua,
+    tertiaryContainer = MediumAqua,
+    onTertiaryContainer = LightMint,
+
+    surface = DarkSurface,
+    onSurface = LightOnDark,
+    surfaceVariant = DarkNeutral,
+    onSurfaceVariant = LightNeutral,
+
+    background = DarkSurface,
+    onBackground = LightOnDark,
+
+    error = ErrorLight,
+    onError = ErrorDark,
+    errorContainer = ErrorDark,
+    onErrorContainer = ErrorLight,
+
+    outline = OutlineGreen,
+    outlineVariant = DarkNeutral
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+    primary = ForestGreen,
+    onPrimary = androidx.compose.ui.graphics.Color.White,
+    primaryContainer = LightSage,
+    onPrimaryContainer = VeryDarkGreen,
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    secondary = EarthBrown,
+    onSecondary = androidx.compose.ui.graphics.Color.White,
+    secondaryContainer = LightEarth,
+    onSecondaryContainer = DarkEarth,
+
+    tertiary = MutedTeal,
+    onTertiary = androidx.compose.ui.graphics.Color.White,
+    tertiaryContainer = LightMint,
+    onTertiaryContainer = DarkTeal,
+
+    surface = SoftWhite,
+    onSurface = AlmostBlack,
+    surfaceVariant = LightNeutral,
+    onSurfaceVariant = DarkNeutral,
+
+    background = SoftWhite,
+    onBackground = AlmostBlack,
+
+    error = ErrorRed,
+    onError = androidx.compose.ui.graphics.Color.White,
+    errorContainer = ErrorLight,
+    onErrorContainer = ErrorDark,
+
+    outline = OutlineGreen,
+    outlineVariant = OutlineVariant
 )
 
 @Composable
 fun FlorifyTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    // Dynamic color disabled to maintain consistent botanical branding
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
@@ -57,8 +101,8 @@ fun FlorifyTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
+            window.statusBarColor = colorScheme.surface.toArgb()
+            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !darkTheme
         }
     }
 
