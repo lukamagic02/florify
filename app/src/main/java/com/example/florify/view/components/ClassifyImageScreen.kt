@@ -71,7 +71,7 @@ fun ClassifyImageScreen(
 
                 results?.forEach {
                     Text(
-                        text = it.category,
+                        text = it.category + ": " + (it.score * 100) + "%",
                         textAlign = TextAlign.Center,
                         modifier = Modifier
                             .padding(16.dp)

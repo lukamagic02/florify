@@ -11,20 +11,20 @@ import java.lang.IllegalStateException
 class MyImageClassifier(
     private val context: Context,
     private val scoreThreshold: Float = 0.0f,
-    private val maxResults: Int = 1
+    private val maxResults: Int = 3
 ) : Classifier {
 
     private var classifier: ImageClassifier? = null
     private var imageProcessor: ImageProcessor = ImageProcessor.Builder().build()
 
     // method for image classification
-    override fun classify(bitmapImage: Bitmap): List<Classification> {
+    override fun classify(image: Bitmap): List<Classification> {
         if (classifier == null) {
             initClassifier()
         }
 
         // transforming the given bitmap to a tensor image
-        val tensorImage = imageProcessor.process(TensorImage.fromBitmap(bitmapImage))
+        val tensorImage = imageProcessor.process(TensorImage.fromBitmap(image))
         val result = classifier?.classify(tensorImage)
 
         // mapping the computed classifications to a list of Classification objects
