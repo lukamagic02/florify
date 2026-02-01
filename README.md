@@ -4,12 +4,10 @@ An Android app that classifies flower species using a self-developed machine lea
 
 ## Interface
 
-```markdown
 <p align="center">
   <img src="screenshots/selection.jpeg" width="250"/>
   <img src="screenshots/results.jpeg" width="250"/>
 </p>
-```
 
 ## Features
 
